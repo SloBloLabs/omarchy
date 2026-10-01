@@ -23,7 +23,7 @@ ShellRoot {
   function writeResult() {
     var payload = JSON.stringify({ ok: failures.length === 0, failures: failures })
     if (resultPath) {
-      Quickshell.execDetached(["bash", "-lc", "printf '%s' " + shellQuote(payload) + " > " + shellQuote(resultPath)])
+      Quickshell.execDetached(["bash", "-c", "printf '%s' " + shellQuote(payload) + " > " + shellQuote(resultPath)])
     }
   }
 
